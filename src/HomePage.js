@@ -13,7 +13,7 @@ function HomePage(props) {
   if (match.path === "/") dispatch(unVisible());
 
   return (
-    <div className="app" style={{ paddingBottom: `2.5rem` }}>
+    <div className="app" style={{ paddingBottom: `3rem` }}>
       <Banner />
       <Row
         title="NETFLIX ORIGINAL"
