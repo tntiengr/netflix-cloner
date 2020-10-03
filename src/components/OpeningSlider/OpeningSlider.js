@@ -55,12 +55,12 @@ function OpeningSlider(props) {
               className={`${styles.first_child}`}
               aria-hidden="true"
             >
-              Welcome To
+              This Is
               <br />
               Netflix Cloner
             </span>
             <span ref={introText2} className={styles.text}>
-              Welcome To
+              This Is
               <br />
               Netflix Cloner
             </span>
@@ -69,7 +69,7 @@ function OpeningSlider(props) {
               className={`${styles.last_child}`}
               aria-hidden="true"
             >
-              Welcome To
+              This Is
               <br />
               Netflix Cloner
             </span>
