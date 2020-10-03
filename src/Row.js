@@ -7,7 +7,7 @@ import movieTrailer from "movie-trailer";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { pointAtThisMovie } from "./pages/MovieDetail/movieDetailSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 Row.propTypes = {
   title: PropTypes.string,
@@ -32,7 +32,6 @@ function Row(props) {
   const { title, fetchURL, isLargeRow } = props;
   const [trailerUrl, setTrailerUrl] = useState("");
   const slideRef = useRef();
-  const movie = useSelector((state) => state.movie.movie);
   const dispatch = useDispatch();
   const [thisMovie, setThisMovie] = useState(null);
 
@@ -111,7 +110,7 @@ function Row(props) {
           {movies.map((movie) => {
             return (
               <div key={movie.id}>
-                <a className="row__posters__container">
+                <div className="row__posters__container">
                   <img
                     key={movie.id}
                     onClick={() => handleShowYoutubeFr(movie)}
@@ -124,7 +123,7 @@ function Row(props) {
                     alt={movie.name}
                     title={`Watch ${movie?.name || movie?.title}`}
                   />
-                </a>
+                </div>
               </div>
             );
           })}

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import "./WatchingMovie.scss";
 import YouTube from "react-youtube";
 import { useDispatch } from "react-redux";

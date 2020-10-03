@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./movieDetail.scss";
 import YouTube from "react-youtube";
 import { useDispatch } from "react-redux";
@@ -199,6 +199,7 @@ function MovieDetail(props) {
                     >
                       <div className="movie-detail__grid--fade"></div>
                       <img
+                        alt="movie-background"
                         className="movie-detail__grid--container__image"
                         src={`${baseUrl}${item.backdrop_path}`}
                       />

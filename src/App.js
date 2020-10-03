@@ -14,7 +14,6 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   const isHide = useSelector((state) => state.nav.hide);
-  const movie = useSelector((state) => state.movie.movie);
   return (
     <div className="app">
       <OpeningSlider />
