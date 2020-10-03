@@ -20,6 +20,7 @@ function MovieDetail(props) {
   const baseUrl = "https://image.tmdb.org/t/p/original/";
   const [trailerURL, setTrailerUrl] = useState("");
   const [reload, setReload] = useState(false);
+  const [show, handleShow] = useState(false);
 
   const opts = {
     playerVars: {
@@ -65,6 +66,17 @@ function MovieDetail(props) {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        handleShow(true);
+      } else handleShow(false);
+    });
+    return () => {
+      // window.removeEventListener("scroll");
+    };
+  }, []);
+
   function handleReRenderMovie(item) {
     const reRender = (item) => {
       return new Promise((resolve, reject) => {
@@ -103,7 +115,12 @@ function MovieDetail(props) {
   }
 
   return (
-    <div className="movie-detail">
+    <div
+      className="movie-detail"
+      style={{
+        paddingTop: `${show ? "5rem" : "0rem"}`,
+      }}
+    >
       {thisMovie && (
         <div>
           <div className="movie-detail__content">

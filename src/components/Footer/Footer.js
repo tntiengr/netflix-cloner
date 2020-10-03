@@ -9,7 +9,13 @@ function Footer(props) {
     <div className="footer">
       <div className="footer__top-part">
         <div className="footer__top-part__logo">
-          <Link to="/">
+          <Link
+            to="/"
+            onClick={() => {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }}
+          >
             <img
               className="footer__top-part__logo__img"
               src="https://www.dafont.com/forum/attach/orig/7/3/736247.png?1"

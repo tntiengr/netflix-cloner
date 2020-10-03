@@ -40,7 +40,6 @@ function Row(props) {
     async function fetchData() {
       const request = await axios.get(fetchURL);
       setMovies(request.data.results);
-      console.log(request.data.results);
       return request;
     }
     fetchData();
@@ -84,6 +83,8 @@ function Row(props) {
         JSON.stringify({ ...thisMovie, trailer: trailerUrl })
       );
     } else console.log("null");
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
   const settings = {
