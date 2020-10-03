@@ -1,0 +1,108 @@
+.row {
+  margin-left: 1rem;
+  color: #fff;
+
+  h1 {
+    margin-left: 2rem;
+    padding-top: 1rem;
+  }
+
+  .row__youtube {
+    text-align: center;
+  }
+
+  .row__youtube__button {
+    padding: 0 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    color: #c70000;
+    font-size: 2rem;
+    font-weight: 500;
+    border: 1px solid #c70000;
+    outline: none;
+
+
+    &__link {
+      color: #6b0000;
+      text-decoration: none;
+      letter-spacing: .1rem;
+    }
+
+    &:hover {
+      background-color: rgba(107, 0, 0, .3);
+
+      .row__youtube__button__link {
+        color: #c70000;
+      }
+
+    }
+  }
+}
+
+.row__posters {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__container {
+    outline: none;
+  }
+
+  .row__poster {
+    width: 100%;
+    max-height: 10rem;
+    object-fit: contain;
+    margin-right: 10px;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+    padding: 20px 0;
+    outline: none;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(110%);
+    }
+  }
+
+  .row__large-poster {
+    max-height: 22.5rem;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .next__button,
+  .prev__button {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    right: 3rem;
+    width: 2rem;
+    height: 2rem;
+    transform: translateX(40px);
+    z-index: 1;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: 0.5;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .prev__button {
+    left: -1rem;
+  }
+}

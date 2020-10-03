@@ -1,0 +1,224 @@
+.movie-detail {
+    color: #fff;
+
+    &__content {
+        display: flex;
+        overflow: hidden;
+
+        &__text-content {
+            width: 40%;
+            height: 25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__image {
+                max-width: 45%;
+                margin-left: 2rem;
+                object-fit: contain;
+                border-radius: 5px;
+            }
+
+            &__text {
+                margin-left: 1rem;
+                font-size: 1.1rem;
+
+                .movie__name {
+                    font-weight: 500;
+                    font-size: 1.4rem;
+
+                    span {
+                        font-weight: 600;
+                        font-size: 1.7rem;
+                        color: #c70000;
+                    }
+                }
+
+                .movie__popularity {
+                    padding-top: 1rem;
+
+                    span {
+                        color: #c70000;
+                        font-weight: 500;
+                    }
+                }
+
+                .movie__language span {
+                    color: #c70000;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+
+                .movie__release-date span {
+                    color: #c70000;
+                    font-weight: 500;
+                }
+
+                .movie__overview__title {
+                    padding-top: 0.3rem;
+                    font-weight: 500;
+                }
+
+                .movie__overview {
+                    font-size: 0.8rem;
+                    color: rgb(248, 248, 248);
+                    text-align: justify;
+                    text-justify: inter-word;
+                    padding-right: .5rem;
+                }
+
+                .movie--watch-it {
+                    text-decoration: none;
+
+                    &__button {
+                        outline: none;
+                        margin-top: 1rem;
+                        padding: 0.5rem 1.7rem;
+                        border: 2px solid #c70000;
+                        color: #c70000;
+                        background-color: transparent;
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                        transition: all 0.1s ease-in-out;
+                        cursor: pointer;
+
+                        &:hover {
+                            border: 2px solid #5c0000;
+                            color: #d80000;
+                            -webkit-box-shadow: 11px 13px 8px 1px rgba(0, 0, 0, 0.75);
+                            -moz-box-shadow: 11px 13px 8px 1px rgba(0, 0, 0, 0.75);
+                            box-shadow: 11px 13px 8px 1px rgba(0, 0, 0, 0.75);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__trailer {
+            width: 60%;
+            position: relative;
+
+            &__youtube {
+                width: 50rem;
+                height: 25rem;
+            }
+
+            .trailer__youtube--override {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50rem;
+                height: 25rem;
+                z-index: 1;
+            }
+        }
+    }
+
+    &__message {
+        margin-top: 1rem;
+        height: 2rem;
+        text-align: center;
+        background-color: #c70000;
+        overflow: hidden;
+        opacity: 0.7;
+
+        p {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 2rem;
+            letter-spacing: 0.7rem;
+        }
+    }
+
+    h1 {
+        margin-top: 2rem;
+        margin-left: 2rem;
+        display: inline-block;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 120%;
+            height: 0.2rem;
+            background-color: #c70000;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__grid {
+        margin: 1rem 1rem 0rem 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.7rem;
+        grid-auto-rows: minmax(15rem, auto);
+        padding-bottom: 3rem;
+        position: relative;
+
+        &--container {
+            overflow: hidden;
+            position: relative;
+            height: 16rem;
+
+            &__name {
+                cursor: pointer;
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.2s ease-in-out;
+
+                h2 {
+                    font-size: 1.3rem;
+                    height: 15%;
+                    display: inline-block;
+                }
+
+                &:hover {
+                    color: #c70000;
+                    text-decoration: none;
+                }
+            }
+
+            &__image {
+                width: 100%;
+                height: 85%;
+                object-fit: cover;
+            }
+        }
+
+        &--fade {
+            width: 100%;
+            height: 85%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+
+            background: rgba(255, 255, 255, 0);
+            background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(17, 17, 17, 1) 100%);
+            background: -webkit-gradient(left top,
+                    left bottom,
+                    color-stop(50%, rgba(255, 255, 255, 0)),
+                    color-stop(100%, rgba(17, 17, 17, 1)));
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(17, 17, 17, 1) 100%);
+            background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(17, 17, 17, 1) 100%);
+            background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(17, 17, 17, 1) 100%);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(17, 17, 17, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#111111', GradientType=0);
+        }
+
+        &__img_group {
+            height: 85%;
+            overflow: hidden;
+
+            &:hover {
+                .movie-detail__grid--fade {
+                    display: hidden;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

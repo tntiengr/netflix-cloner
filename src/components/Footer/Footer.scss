@@ -1,0 +1,103 @@
+.footer {
+    width: 100%;
+    height: 45vh;
+    background-color: rgb(17, 17, 17);
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+
+
+    &__top-part {
+        color: #fff;
+        display: flex;
+        justify-content: flex-start;
+
+        &__logo {
+            display: flex;
+            width: 8rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                color: #af0000;
+                font-size: 1.5rem;
+                cursor: none;
+                margin-top: -1.1rem;
+            }
+
+            &__img {
+                width: 8rem;
+            }
+        }
+
+        &__about {
+            margin-left: 10rem;
+            color: #af0000;
+
+            p {
+                color: #790000;
+            }
+        }
+
+        &__contact {
+            margin-left: 15rem;
+            color: #af0000;
+
+            p {
+                color: #790000;
+            }
+        }
+    }
+
+    &__br {
+        color: white;
+        width: 80%;
+        height: 2px;
+        background-color: #740000;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        opacity: .5;
+        -webkit-box-shadow: 19px 9px 12px 0px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 19px 9px 12px 0px rgba(0, 0, 0, 1);
+        box-shadow: 19px 9px 12px 0px rgba(0, 0, 0, 1);
+    }
+
+    &__bottom-part {
+        color: #fff;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 17px 12px 4px #000000;
+
+        &__line-1 {
+            margin-bottom: 1rem;
+
+            a {
+                color: rgb(170, 170, 170);
+                text-decoration: none;
+                margin: 0 1rem;
+                transition: color .3s ease;
+
+                &:hover {
+                    color: rgb(255, 255, 255);
+                }
+
+                i {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        &__line-2 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #af0000;
+        }
+    }
+}
