@@ -38,6 +38,11 @@ function Navigation(props) {
   function onSubmit(data) {
     dispatch(searchTheKeyWord(data[`nav-search`]));
     history.push("/search-page");
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: `smooth`,
+    });
   }
   return (
     <div

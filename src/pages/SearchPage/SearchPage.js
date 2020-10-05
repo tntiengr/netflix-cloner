@@ -15,7 +15,6 @@ function SearchPage(props) {
   const baseUrl = "https://image.tmdb.org/t/p/original/";
 
   if (match.path === "/search-page") dispatch(visible());
-  console.log(listMovie);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -34,8 +33,8 @@ function SearchPage(props) {
         )
           return item;
       });
+
       setListSearch(listItem);
-      console.log(listItem);
     }
     finding();
   }, [keyWord]);
