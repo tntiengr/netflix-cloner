@@ -7,7 +7,8 @@ import movieTrailer from "movie-trailer";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { pointAtThisMovie } from "./pages/MovieDetail/movieDetailSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addInMovieList } from "./RowSlice";
 
 Row.propTypes = {
   title: PropTypes.string,
@@ -34,11 +35,13 @@ function Row(props) {
   const slideRef = useRef();
   const dispatch = useDispatch();
   const [thisMovie, setThisMovie] = useState(null);
+  const listMovie = useSelector((state) => state.listMovie.listMovie);
 
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchURL);
       setMovies(request.data.results);
+      dispatch(addInMovieList(request.data.results));
       return request;
     }
     fetchData();

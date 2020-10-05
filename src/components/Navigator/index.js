@@ -3,11 +3,18 @@ import "./Navigator.scss";
 import calisLogo from "../../imgs/calisgrLogo.jpg";
 import { Link } from "react-router-dom";
 import { TweenMax, Power3 } from "gsap";
+import { useForm } from "react-hook-form";
+import { searchTheKeyWord } from "./NavigatorSlice";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function Navigation(props) {
   const { hide } = props;
   const [show, handleShow] = useState(false);
   const navBar = useRef(null);
+  const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
+  let history = useHistory();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -28,6 +35,10 @@ function Navigation(props) {
     });
   }, []);
 
+  function onSubmit(data) {
+    dispatch(searchTheKeyWord(data[`nav-search`]));
+    history.push("/search-page");
+  }
   return (
     <div
       ref={navBar}
@@ -65,42 +76,42 @@ function Navigation(props) {
                 <span>
                   <li className="nav__midddle__secondary-list__item item-1">
                     <Link className="text__inside" to="/movie-detail">
-                      KING KONG
+                      MOVIE DETAIL
                     </Link>
                   </li>
                 </span>
                 <span>
                   <li className="nav__midddle__secondary-list__item item-2">
                     <Link className="text__inside" to="/movie-detail">
-                      AVENGERS
+                      MOVIE DETAIL
                     </Link>
                   </li>
                 </span>
                 <span>
                   <li className="nav__midddle__secondary-list__item item-3">
                     <Link className="text__inside" to="/actor-detail">
-                      TOM HOOLAN
+                      ACTOR DETAIL
                     </Link>
                   </li>
                 </span>
                 <span>
                   <li className="nav__midddle__secondary-list__item item-4">
                     <Link className="text__inside" to="/actor-detail">
-                      MIA KHALIFA
+                      ACTOR DETAIL
                     </Link>
                   </li>
                 </span>
                 <span>
                   <li className="nav__midddle__secondary-list__item item-5">
                     <Link className="text__inside" to="/movie-detail">
-                      TOM & JERRY
+                      MOVIE DETAIL
                     </Link>
                   </li>
                 </span>
                 <span>
                   <li className="nav__midddle__secondary-list__item item-6">
                     <Link className="text__inside" to="/movie-detail">
-                      PINK PANTHER
+                      MOVIE DETAIL
                     </Link>
                   </li>
                 </span>
@@ -110,8 +121,9 @@ function Navigation(props) {
         </ul>
       </div>
       <div className="nav__right">
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <input
+            ref={register}
             className="nav--search"
             placeholder="Lets find a movie!"
             type="text"
@@ -119,7 +131,9 @@ function Navigation(props) {
             id="nav-search"
           />
         </form>
-        <img className="nav_logo-img" src={calisLogo} alt="CalisGr Logo" />
+        <Link to="/search-page">
+          <img className="nav_logo-img" src={calisLogo} alt="CalisGr Logo" />
+        </Link>
       </div>
     </div>
   );

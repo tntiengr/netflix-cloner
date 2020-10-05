@@ -4,6 +4,7 @@ export const navReducer = createSlice({
   name: "navagation detail",
   initialState: {
     hide: true,
+    searchKeyWord: "truongnhattien",
   },
   reducers: {
     visible: (state) => {
@@ -12,7 +13,10 @@ export const navReducer = createSlice({
     unVisible: (state) => {
       state.hide = true;
     },
+    searchTheKeyWord: (state, action) => {
+      state.searchKeyWord = action.payload;
+    },
   },
 });
-export const { visible, unVisible } = navReducer.actions;
+export const { visible, unVisible, searchTheKeyWord } = navReducer.actions;
 export default navReducer.reducer;

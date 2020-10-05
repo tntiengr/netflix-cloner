@@ -1,0 +1,35 @@
+.actor-detail {
+    width: 100%;
+
+    .red-block {
+        height: 500px;
+        width: 100%;
+    }
+
+    &__number {
+        color: #ffffff;
+        font-size: 2rem;
+    }
+
+    &__button {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 500;
+        outline: none;
+        background-color: transparent;
+        border: 2px solid #c70000;
+        cursor: pointer;
+        padding: 0.5rem 1.5rem;
+        transition: background-color .3s ease;
+
+        &:hover {
+            background-color: #c70000;
+        }
+    }
+
+    &__loading {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}

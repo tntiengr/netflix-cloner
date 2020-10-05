@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import OpeningSlider from "./components/OpeningSlider/OpeningSlider";
 import WatchingMovie from "./pages/WatchingMovie/WatchingMovie";
 import Footer from "./components/Footer/Footer";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 function App() {
   const isHide = useSelector((state) => state.nav.hide);
@@ -24,6 +25,7 @@ function App() {
           <Route path="/movie-detail" exact component={MovieDetail} />
           <Route path={`/movie-detail/:movieId`} component={WatchingMovie} />
           <Route path="/actor-detail" component={ActorDetail} />
+          <Route path="/search-page" component={SearchPage} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

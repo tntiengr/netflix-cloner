@@ -22,20 +22,18 @@
     border: 1px solid #c70000;
     outline: none;
 
-
     &__link {
       color: #6b0000;
       text-decoration: none;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
     }
 
     &:hover {
-      background-color: rgba(107, 0, 0, .3);
+      background-color: rgba(107, 0, 0, 0.3);
 
       .row__youtube__button__link {
         color: #c70000;
       }
-
     }
   }
 }
